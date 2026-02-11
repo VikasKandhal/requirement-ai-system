@@ -161,3 +161,16 @@ This approach reflects **best practices used in production GenAI systems**.
 - Multi-document comparison and conflict detection
 - Authentication and role-based access control
 - Cloud deployment and scalability enhancements
+
+## 🧰 Tech Stack
+
+- **Backend Framework:** FastAPI  
+- **Template Engine:** Jinja2  
+- **AI Processing:** Large Language Models (LLMs)  
+- **PDF Parsing:** PyMuPDF  
+- **Server:** Uvicorn  
+- **Language:** Python 3.11+
+
+
+The project follows a clean separation between routing, business logic, and presentation layers.
+
