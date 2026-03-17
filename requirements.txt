@@ -7,3 +7,4 @@ pydantic
 PyMuPDF
 PyPDF2
 python-multipart
+jinja2
