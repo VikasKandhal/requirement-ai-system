@@ -10,8 +10,13 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-EXPOSE 8000
+# Use Render's dynamic port
+ENV PORT=10000
 
-HEALTHCHECK CMD curl --fail http://localhost:8000/health || exit 1
+EXPOSE 10000
 
-CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+# Health check using dynamic port
+HEALTHCHECK CMD curl --fail http://localhost:$PORT/health || exit 1
+
+# Start FastAPI properly
+CMD ["sh", "-c", "uvicorn app:app --host 0.0.0.0 --port $PORT"]
