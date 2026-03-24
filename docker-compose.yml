@@ -5,6 +5,6 @@ services:
     build: .
     container_name: requirement_ai_app
     ports:
-      - "8000:8000"
+      - "8000:10000"
     env_file:
       - .env
