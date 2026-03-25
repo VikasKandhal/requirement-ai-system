@@ -1,3 +1,18 @@
+"""
+routes.py
+
+This module defines all API endpoints for the Requirement AI System.
+It handles incoming HTTP requests, validates user input, and interacts
+with the service layer to process requirements using AI models.
+
+Responsibilities:
+- Define REST API routes
+- Handle request/response lifecycle
+- Perform input validation
+- Return structured JSON responses
+"""
+
+
 from fastapi import APIRouter, UploadFile, File, Form, HTTPException
 
 from services.extractor import extract_requirements
