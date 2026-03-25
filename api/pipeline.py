@@ -1,3 +1,21 @@
+"""
+pipeline.py
+
+This module acts as the central orchestration layer of the system.
+It coordinates multiple services to process user input (text or PDF)
+and generate structured outputs including requirements, risks, and task plans.
+
+Pipeline Flow:
+1. Input ingestion (text or PDF)
+2. Text chunking (for large inputs)
+3. Requirement extraction
+4. Risk analysis
+5. Task planning
+6. Aggregation of results
+
+This modular pipeline design ensures scalability and maintainability.
+"""
+
 from services.extractor import extract_requirements
 from services.risk_analyzer import analyze_risks
 from services.task_planner import plan_tasks
