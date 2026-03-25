@@ -1,3 +1,43 @@
+"""
+extractor.py
+
+This module is responsible for extracting structured requirements from
+unstructured text using a Large Language Model (LLM).
+
+Key Responsibilities:
+- Convert raw user input into categorized requirement data
+- Classify information into predefined categories such as:
+  - Business Objectives
+  - Functional Requirements
+  - Non-Functional Requirements
+  - Constraints & Assumptions
+  - Open Questions
+- Ensure strict adherence to factual extraction without inference
+
+How it works:
+- A carefully engineered prompt is constructed with explicit rules
+- The prompt is sent to an LLM via the Groq API
+- The model processes the input text and returns structured JSON output
+- The response is parsed into a Python dictionary for downstream processing
+
+Important Design Considerations:
+- Prompt engineering is used to control output format and accuracy
+- Strict JSON structure ensures compatibility with pipeline processing
+- Source traceability is maintained using "source_quote" for each item
+- No assumptions or inferred data are allowed to maintain data integrity
+
+Why this module is critical:
+- It acts as the core intelligence layer of the system
+- The quality of extracted requirements directly impacts downstream tasks
+  like risk analysis and task planning
+- Enables automation of requirement analysis from natural language input
+
+Limitations:
+- Dependent on LLM response consistency
+- Requires strict prompt design to avoid malformed JSON
+- Performance depends on API latency and model behavior
+"""
+
 from groq import Groq
 from services.config import GROK_API_KEY
 from dotenv import load_dotenv
