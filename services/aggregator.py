@@ -1,3 +1,23 @@
+"""
+merge_utils.py
+
+This module provides utility functions to merge structured extraction results
+generated from multiple chunks of input text (e.g., large documents or PDFs).
+
+Key Responsibilities:
+- Combine results from different chunks into a single unified structure
+- Prevent duplicate entries using a combination of "value" and "source_quote"
+- Maintain data integrity while aggregating results across processing stages
+
+How it works:
+- Each chunk produces partial structured output (requirements, risks, etc.)
+- These outputs are merged incrementally into a master result
+- Duplicate entries are avoided using a set-based lookup for efficiency
+
+This approach ensures scalable and consistent aggregation of AI-generated data
+when processing large inputs in a chunked pipeline.
+"""
+
 def merge_list_items(existing_list, new_list):
     """
     Avoid duplicates by comparing value + source_quote.
